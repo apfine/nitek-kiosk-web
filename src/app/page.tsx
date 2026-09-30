@@ -43,8 +43,8 @@ export default function Home() {
         {/* Header */}
         <header className="flex flex-wrap items-center justify-between gap-4 mb-16">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center font-bold text-gray-500">
-              Logo
+            <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+              <Image src="/nitek.jpeg" alt="NITEK Logo" width={48} height={48} className="object-cover w-full h-full" />
             </div>
             <h1 className="text-3xl font-black tracking-[0.2em] text-[#1E293B]">
               NITEK
