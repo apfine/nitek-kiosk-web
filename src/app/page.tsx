@@ -66,12 +66,6 @@ export default function Home() {
                 Keyboard/Mouse<br/>Connected
               </span>
             </div>
-            
-            {/* Clock Pill */}
-            <div className="bg-white px-5 py-3 rounded-2xl shadow-sm text-right min-w-[140px]">
-              <div className="text-xl font-bold">{currentTime || "..."}</div>
-              <div className="text-xs text-slate-500 font-medium">{currentDate || "..."}</div>
-            </div>
           </div>
         </header>
 
@@ -144,16 +138,8 @@ export default function Home() {
         {/* Footer Actions */}
         <div className="mt-auto flex justify-center gap-4 flex-wrap pb-4">
           <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
-            <BarChart className="w-5 h-5 text-slate-700" />
-            <span className="font-semibold text-slate-700">My Progress</span>
-          </button>
-          <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
             <Globe className="w-5 h-5 text-slate-700" />
             <span className="font-semibold text-slate-700">Language</span>
-          </button>
-          <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
-            <Settings className="w-5 h-5 text-slate-700" />
-            <span className="font-semibold text-slate-700">Settings</span>
           </button>
           <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
             <HelpCircle className="w-5 h-5 text-slate-700" />
