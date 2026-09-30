@@ -23,6 +23,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState("");
   const [currentDate, setCurrentDate] = useState("");
   const [showLearningModal, setShowLearningModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -137,11 +138,7 @@ export default function Home() {
 
         {/* Footer Actions */}
         <div className="mt-auto flex justify-center gap-4 flex-wrap pb-4">
-          <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
-            <Globe className="w-5 h-5 text-slate-700" />
-            <span className="font-semibold text-slate-700">Language</span>
-          </button>
-          <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
+          <button onClick={() => setShowHelpModal(true)} className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
             <HelpCircle className="w-5 h-5 text-slate-700" />
             <span className="font-semibold text-slate-700">Help</span>
           </button>
@@ -161,6 +158,46 @@ export default function Home() {
                 className="px-6 py-2 bg-slate-100 hover:bg-slate-200 rounded-full font-semibold transition-colors"
               >
                 Back
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal for Help Information */}
+      {showHelpModal && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto my-auto">
+            <h3 className="text-2xl font-bold mb-6 text-[#1E293B]">Module Information</h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-bold text-[#0F172A]">HOMI</h4>
+                <p className="text-slate-600 mt-1">HOMI is a multimodal study assistant which helps you clear exams. It features an advanced doubt solver, an interactive viva taker, and comprehensive AI-enabled features to personalize your learning experience.</p>
+              </div>
+              <hr className="border-slate-100" />
+              <div>
+                <h4 className="text-lg font-bold text-[#0F172A]">Digital Library</h4>
+                <p className="text-slate-600 mt-1">A vast repository of academic resources. The Digital Library provides unrestricted access to eBooks, curated notes, research papers, and video lectures tailored to your curriculum.</p>
+              </div>
+              <hr className="border-slate-100" />
+              <div>
+                <h4 className="text-lg font-bold text-[#0F172A]">Virtual STEM Lab</h4>
+                <p className="text-slate-600 mt-1">Experience science in action! The Virtual STEM Lab allows you to perform complex experiments, simulate chemical reactions, and explore physics concepts in a completely safe, interactive digital environment.</p>
+              </div>
+              <hr className="border-slate-100" />
+              <div>
+                <h4 className="text-lg font-bold text-[#0F172A]">Learning Content</h4>
+                <p className="text-slate-600 mt-1">Your core academic hub. Access structured curriculum modules, engage with interactive daily lessons, and test your knowledge with adaptive practice assessments.</p>
+              </div>
+            </div>
+
+            <div className="flex justify-end mt-8">
+              <button 
+                onClick={() => setShowHelpModal(false)}
+                className="px-6 py-2 bg-slate-100 hover:bg-slate-200 rounded-full font-semibold transition-colors"
+              >
+                Close
               </button>
             </div>
           </div>
